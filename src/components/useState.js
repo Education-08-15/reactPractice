@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const State = ({ initialValue }) => {
   let [count, setCount] = useState(initialValue); // we get initialValue in the form of from from index.js
@@ -12,6 +12,9 @@ const State = ({ initialValue }) => {
   const reset = () => {
     setCount((count = initialValue));
   };
+  useEffect(() => {
+    console.log('useEffect');
+  });
 
   console.log(count);
   return (
