@@ -11,7 +11,7 @@ const App = () => {
       {/* passing initialValue as prop */}
       {/* <State initialValue={0} /> */}
       {/* <UseState1></UseState1> */}
-      <Effect />
+      {/* <Effect /> */}
     </div>
   );
 };
