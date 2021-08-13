@@ -9,9 +9,9 @@ const App = () => {
     <div>
       Hello
       {/* passing initialValue as prop */}
-      {/* <State initialValue={0} /> */}
-      {/* <UseState1></UseState1> */}
-      {/* <Effect /> */}
+      <State initialValue={0} />
+      <UseState1></UseState1>
+      <Effect />
     </div>
   );
 };
