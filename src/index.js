@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-// import State from './components/useState';
-import UseState1 from './components/useState1';
+import React, { useState, useCallback } from 'react';
+import reactDom from 'react-dom';
+import Age from './components/age';
+import AgeBtn from './components/ageBtn';
+import Count from './components/count';
+import CountBtn from './components/countBtn';
+import Title from './components/title';
 
-const App = () => {
+function App() {
+  let [count, setCount] = useState(0);
+  let [age, setAge] = useState(10);
+
+  const incrementCount = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+  const incrementAge = useCallback(() => {
+    setAge(++age);
+  }, [age]);
   return (
     <div>
-      Hello
-      {/* passing initialValue as */}
-      {/* <State initialValue={0} /> */}
-      <UseState1 />
+      <Title />
+      <hr />
+      <Count count={count} />
+      <CountBtn handleCount={incrementCount} />
+      <Age age={age} />
+      <AgeBtn handleAge={incrementAge} />
     </div>
   );
-};
+}
 
-ReactDom.render(<App />, document.getElementById('root'));
+export default App;
+
+reactDom.render(<App />, document.getElementById('root'));
